@@ -2,26 +2,18 @@ package modelos;
 
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor extends Usuario{
     public String codigo;
-    public String nombre;
-    public String apellido;
-    public int edad;
-    public String direccion;
-    public String telefono;
-    public ArrayList<Paralelo> paralelos;
     private int aniosdeTrabajo;
     private String facultad;
     private double BonoFijo;
 	static double bonoPorAnio=600;
+	
+	
     public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        paralelos= new ArrayList<>();
+    	super(nombre,  apellido,  facultad,  edad,  direccion,  telefono);
+    	this.codigo = codigo;
+       
     }
     
     public void anadirParalelos(Paralelo p){
@@ -30,17 +22,12 @@ public class Profesor {
     public int getAniosdeTrabajo() {
     	return aniosdeTrabajo;
     }
-    public String getFacultad() {
-    	return facultad;
-    }
+    
     public double getBonoFijo() {
     	return BonoFijo;
     } 
     public void setAniosdeTrabajo(int anios) {
     	this.aniosdeTrabajo=anios;
-    }
-    public void setFacultad(String facultad) {
-    	this.facultad=facultad;
     }
     public void setBonoFijo(double bonoFijo) {
     	this.BonoFijo=bonoFijo;
